@@ -1,0 +1,39 @@
+﻿@model  IEnumerable<WebScrapperFinal.Models.UniversityDocuments>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div >
+@*<form method="post" action="/Home/ScrapWebsite">
+   <input type="text" name="website" title="website" placeholder="please enter website url" />
+   <input type="submit" title="scrapWebsite" />
+   </form> 
+*@
+</div>
+
+<div>
+    <h4>Scraping Website</h4>
+    <div>
+        @if (Model!= null)
+        {
+            foreach(var universityCourses in Model)
+            {
+                <div>
+                  @*   <img src="@blogData.BlogImage" width="50" height="50" />
+                    <p>@blogData.Title</p>
+                    <p>@blogData.Author</p>
+                    <p>@blogData.PublishDate</p> *@
+                   @* <p>@universityCourses.CourseName  @universityCourses.Campus</p>*@
+                  <p>@universityCourses.Document</p>
+                </div>
+            }
+            
+        } 
+        else
+        {
+           <p>No data found</p>
+        }
+       
+    </div>
+</div>
